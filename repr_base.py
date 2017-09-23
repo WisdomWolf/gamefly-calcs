@@ -1,6 +1,7 @@
 from datetime import date
 
 class ReprBase(object):
+    '''Generic base class for consistent repr function'''
     dollar_attrs = []
     def __repr__(self):
         repr_list = []
