@@ -1,12 +1,7 @@
 stages:
   - deploy
 
-Variable Echo:
-  stage: deploy
-  script:
-    - echo -e "Project Name: $CI_PROJECT_NAME\nUser Login: $GITLAB_USER_LOGIN"
-
 Git MIRROR:
   stage: deploy
   script:
-    - git push --mirror https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/WisdomWolf/gamefly-calcs.git
+    - echo -e "Project Name: $CI_PROJECT_NAME\nUser Login: $GITLAB_USER_LOGIN" && git push --mirror https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/WisdomWolf/gamefly-calcs.git
