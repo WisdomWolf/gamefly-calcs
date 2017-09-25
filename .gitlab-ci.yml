@@ -5,5 +5,5 @@ Git MIRROR:
   stage: deploy
   script:
     - echo "Project Name: $CI_PROJECT_NAME"
-    - echo "User Long: $GITLAB_USER_LOGIN"
+    - echo "User Login: $GITLAB_USER_LOGIN"
     - git push --mirror https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/WisdomWolf/gamefly-calcs.git
