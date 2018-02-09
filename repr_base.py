@@ -1,6 +1,7 @@
 from datetime import date
 
 class ReprBase(object):
+    '''Generic base class for consistent repr function'''
     dollar_attrs = []
     def __repr__(self):
         repr_list = []
@@ -15,8 +16,9 @@ class ReprBase(object):
         
     @staticmethod
     def _sort(key):
+        '''Used to ensure certain attributes are listed first'''
         key = key.split(':')[0].lower()
-        sort_keys = ['id', 'name']
+        sort_keys = ['id', 'name'] # Should probably be a class variable so that it can be easily overridden
         try:
             return sort_keys.index(key)
         except ValueError:
