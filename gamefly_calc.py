@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from datetime import datetime, date, timedelta
+from datetime import time as datetime_time
 from dateutil.parser import parse as parse_date
 from repr_base import ReprBase
 
@@ -12,8 +13,10 @@ class GameRental(ReprBase):
     dollar_attrs = ['total_cost', 'daily_cost', 'current_cost']
 
     def __init__(self, name, rental_date, total_cost, monthly_fee=7):
-        if not isinstance(rental_date, date):
+        if not isinstance(rental_date, datetime) and not isinstance(rental_date, date):
             rental_date = parse_date(rental_date)
+        elif not isinstance(rental_date, datetime):
+            rental_date = datetime.combine(rental_date, datetime_time())
         self.name = name
         self.rental_date = rental_date
         self.total_cost = float(total_cost)
