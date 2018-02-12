@@ -56,7 +56,17 @@ class GameRental(ReprBase):
 
 
 def _get_daily_cost(monthly_cost):
-        return monthly_cost / 30
+        daily_cost = monthly_cost / 30
+        if 15 < monthly_cost < 22:
+            return daily_cost / 1
+        elif 22 < monthly_cost < 29:
+            return daily_cost / 2
+        elif 29 < daily_cost < 36:
+            return daily_cost / 3
+        elif 36 < daily_cost < 37:
+            return daily_cost / 4
+        else:
+            raise ValueError('Invalid Monthly Cost')
         
         
 def display_game_list(games):
