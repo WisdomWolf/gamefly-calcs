@@ -1,3 +1,7 @@
+variables:
+  GITHUB_USER: $GITHUB_USERNAME
+  GITHUB_PASS: $GITHUB_PASSWORD
+
 stages:
   - deploy
 
