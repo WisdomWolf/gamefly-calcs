@@ -8,4 +8,4 @@ stages:
 Git MIRROR:
   stage: deploy
   script:
-    - echo -e "Project Name: %CI_PROJECT_NAME\nProject Namespace: $CI_PROJECT_NAMESPACE\nProject Path: $CI_PROJECT_PATH\nCommit Ref Name: $CI_COMMIT_REF_NAME" && git push --mirror https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/$GITLAB_USER_LOGIN/$CI_PROJECT_NAME.git
+    - echo -e "Project Name $CI_PROJECT_NAME\nProject Namespace $CI_PROJECT_NAMESPACE\nProject Path $CI_PROJECT_PATH\nCommit Ref Name $CI_COMMIT_REF_NAME" && git push --mirror https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/$GITLAB_USER_LOGIN/$CI_PROJECT_NAME.git
